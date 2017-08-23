@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <title>Quiz 4</title>
+
+    </head>
+    <body>
+    <div class="container">
+    <div class="media-left">
+     <img src="{{ url_for('static', filename = 'image.jpg') }}" width="150px" height="150px" class="media-object
+     img-circle"></div>
+     <div class="media-body">
+         <h1><b><center>Madhav Vij: 1001440170</center></b></h1>
+     </div>
+        {% if count %}
+        <label for="Count">Number Of Enteries = {{ count }} </label>
+        {% endif %}
+    </div>
+    <div class="container" >
+        <div class="well">
+        <div class="form-group">
+            <div class="page-header">
+                <h2>Details:</h2>
+            </div>
+            <form action="processData" method="post">
+                <label for="surname">Surname: </label> <input class="form-control" type="text" name="surname"
+                                                               placeholder="Eg: Smith" /><br/>
+                <label for="type">Type: </label>  <input class="form-control" type="text" name="type"
+                                                                placeholder="db/mem" /><br/>
+                <input class="btn btn-success btn-block btn-lg" type="submit" value="query">
+            </form>
+        </div>
+        </div>
+
+    <div class="container" >
+        <div class="well">
+        <div class="form-group">
+            <div class="page-header">
+                <h2>Details:</h2>
+            </div>
+            <form action="processData2" method="post">
+                <label for="range1">From: </label> <input class="form-control" type="text" name="range1"
+                                                               placeholder="Eg: 2" /><br/>
+                <label for="range2">To: </label>  <input class="form-control" type="text" name="range2"
+                                                                placeholder="Eg: 7" /><br/>
+                <label for="state">State: </label> <input class="form-control" type="text" name="state"
+                                                               placeholder="Eg: MA" /><br/>
+                <label for="type">Type: </label>  <input class="form-control" type="text" name="type"
+                                                                placeholder="db/mem" /><br/>
+                <input class="btn btn-success btn-block btn-lg" type="submit" value="query">
+            </form>
+        </div>
+        </div>
+
+
+
+    <div class="container" >
+        <div class="well">
+        <div class="form-group">
+            <div class="page-header">
+                <h2>Details:</h2>
+            </div>
+            <form action="processData4" method="post">
+                <label for="range1">From: </label> <input class="form-control" type="text" name="range1"
+                                                               placeholder="Eg: 2" /><br/>
+                <label for="range2">To: </label>  <input class="form-control" type="text" name="range2"
+                                                                placeholder="Eg: 7" /><br/>
+                <label for="state">State: </label> <input class="form-control" type="text" name="state"
+                                                               placeholder="Eg: MA" /><br/>
+                <label for="type">Type: </label>  <input class="form-control" type="text" name="type"
+                                                                placeholder="db/mem" /><br/>
+                <input class="btn btn-success btn-block btn-lg" type="submit" value="query">
+            </form>
+        </div>
+        </div>
+
+
+
+<div class="container" >
+        <div class="well">
+        <div class="form-group">
+            <div class="page-header">
+                <h2>Choose magnitude range</h2>
+            </div>
+            <form action="process" method="post">
+                <label for="range1">From: </label> <input class="form-control" type="text" name="range1"
+                                                               placeholder="Eg: 2" /><br/>
+                <label for="range2">To: </label>  <input class="form-control" type="text" name="range2"
+                                                                placeholder="Eg: 7" /><br/>
+                <label for="type">Type: </label>  <input class="form-control" type="text" name="type"
+                                                                placeholder="db/mem" /><br/>
+                <label for="type">No. of Times: </label>  <input class="form-control" type="text" name="times"
+                                                                placeholder="500" /><br/>
+                <input class="btn btn-success btn-block btn-lg" type="submit" value="query">
+            </form>
+        </div>
+        </div>
+    {% if survivors %}
+        <h2>Total Survivors: {{ survivors }}</h2>
+
+    {% endif %}
+</div>
+
+<div class="container" >
+        <div class="well">
+        <div class="form-group">
+            <div class="page-header">
+                <h2>Choose Passenger</h2>
+            </div>
+            <form action="passenger" method="post">
+                <label for="lname">Last Name:</label> <input class="form-control" type="text" name="lname"
+                                                               placeholder="Eg: Smith" /><br/>
+                <label for="range3">From:</label> <input class="form-control" type="text" name="fare1"
+                                                               placeholder="Eg: 10" /><br/>
+                <label for="range4">To:</label>  <input class="form-control" type="text" name="fare2"
+                                                                placeholder="Eg: 45" /><br/>
+                <input class="btn btn-success btn-block btn-lg" type="submit" value="Passengers">
+            </form>
+        </div>
+        </div>
+</div>
+
+
+<div class="container" >
+        <div class="well">
+        <div class="form-group">
+            <div class="page-header">
+                <h2>Choose Passenger</h2>
+            </div>
+            <form action="update" method="post">
+                <label for="dest">Dest Name:</label> <input class="form-control" type="text" name="dest"
+                                                               placeholder="Eg: Smith" /><br/>
+                <label for="range3">From:</label> <input class="form-control" type="text" name="fare1"
+                                                               placeholder="Eg: 10" /><br/>
+                <label for="range4">To:</label>  <input class="form-control" type="text" name="fare2"
+                                                                placeholder="Eg: 45" /><br/>
+                <input class="btn btn-success btn-block btn-lg" type="submit" value="Destination">
+            </form>
+        </div>
+        </div>
+</div>

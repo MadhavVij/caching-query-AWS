@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    </head>
+    <body>
+
+
+    {% if result %}
+
+
+    <div class="container">
+        <div class="page-header"><center><h1>Data From Table</h1></center><br/>
+        <center><h1>Time Taken: {{ result[-1] }}</h1></center>
+
+        </div>
+<div class="well">
+        {% for list in result %}
+            {{ list }}
+        {% endfor %}</div>
+        </div>
+    {% endif %}
+
+
+
+
+    {% if result2 %}
+    <div class="container">
+        <div class="page-header"><center><h1>Data From Table</h1></center><br/>
+        <center><h1>Time Taken: {{ result2[-1] }}</h1></center>
+        <center><h1>Total Count: {{ result2[0] }}</h1></center>
+        </div>
+<div class="well">
+
+
+        {% for list in result2[1:12] %}
+            {{ list }}
+        {% endfor %}
+        </div>
+        </div>
+    {% endif %}
+
+    </body>
+</html>
